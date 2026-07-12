@@ -1,0 +1,185 @@
+# Smart Email Automation - Setup Guide
+
+This guide explains how to configure and run the AI-powered Smart Email Automation workflow in n8n.
+
+---
+
+## Prerequisites
+
+Before importing the workflow, make sure you have:
+
+- n8n (Cloud or Self-hosted)
+- Gmail Account
+- Google Cloud Project
+- OpenRouter Account
+- Airtable Account
+
+---
+
+## Step 1: Import the Workflow
+
+1. Open n8n.
+2. Click **Import from File**.
+3. Select `workflow.json`.
+4. Save the workflow.
+
+---
+
+## Step 2: Configure Gmail Credentials
+
+Create a Gmail OAuth2 credential in n8n.
+
+Required:
+
+- Client ID
+- Client Secret
+- Redirect URI
+
+Grant the following permissions:
+
+- Read Emails
+- Modify Emails
+- Create Drafts
+- Manage Labels
+
+---
+
+## Step 3: Configure OpenRouter
+
+Create an OpenRouter API credential.
+
+Required:
+
+- API Key
+
+Recommended Model:
+
+- DeepSeek V3
+- GPT-4o Mini
+- Claude Sonnet
+- Gemini
+
+---
+
+## Step 4: Configure Airtable
+
+Create an Airtable Personal Access Token.
+
+Configure:
+
+- Personal Access Token
+- Base ID
+- Table Name
+
+Required Fields:
+
+| Field | Type |
+|--------|------|
+| Subject | Single Line Text |
+| Summary | Long Text |
+| Priority | Single Select |
+| Category | Single Select |
+| Date | Date |
+
+---
+
+## Step 5: Update AI Prompts
+
+Configure the prompts inside the AI Agent nodes.
+
+The workflow performs:
+
+- Email Classification
+- Email Summarization
+- Priority Detection
+- Draft Reply Generation
+
+---
+
+## Step 6: Activate Gmail Trigger
+
+Enable the Gmail Trigger node.
+
+The workflow will start automatically whenever a new email is received.
+
+---
+
+## Workflow Features
+
+✅ Automatic Email Classification
+
+Categories:
+
+- Personal
+- Internship
+- Promotional
+- Payments
+- Updates & Notifications
+- Misleading
+
+---
+
+### Promotional Emails
+
+- Add Gmail Label
+
+---
+
+### Internship Emails
+
+- Add Gmail Label
+- Generate AI Reply Draft
+
+---
+
+### Personal Emails
+
+- Generate Summary
+- Detect Priority
+- Save to Airtable
+- Mark as Read
+
+---
+
+### Misleading Emails
+
+- Add Gmail Label
+- Move Thread to Trash
+
+---
+
+### Updates & Notifications
+
+- Add Gmail Label
+
+---
+
+## Tech Stack
+
+- n8n
+- Gmail API
+- OpenRouter AI
+- Airtable
+- JSON Structured Output
+
+---
+
+## Security Notice
+
+This repository does **not** include:
+
+- Gmail Credentials
+- Airtable Tokens
+- OpenRouter API Keys
+- OAuth Secrets
+
+You must configure your own credentials before running the workflow.
+
+---
+
+## Author
+
+Anish Patel
+
+GitHub:
+https://github.com/pokemon12-12

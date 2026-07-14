@@ -109,14 +109,6 @@ For every incoming email, the workflow performs:
 
 ---
 
-# 📷 Workflow
-
-> Replace the image below with your own workflow screenshot.
-
-![Workflow](assets/workflow.png)
-
----
-
 # 🚀 Getting Started
 
 ### 1. Clone the repository
